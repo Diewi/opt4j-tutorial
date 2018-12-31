@@ -9,6 +9,16 @@ dependencies {
 	compile project(':opt4j-viewer')
 }
 
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+            exclude '**/Opt4JTutorialActivator.java'
+            exclude 'test/**'
+       }
+   }
+}
+
 task filterSources(type: Copy) {
 	from('src/main/java') {
         include '**/*.java'
